@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "webpack-dev-server --open",
-    "pub": "set NODE_ENV=dev && webpack –config webpack-dist.config.js"
+    "pub": "set NODE_ENV=dev && webpack --config webpack-dist.config.js && rimraf .public"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.0",
