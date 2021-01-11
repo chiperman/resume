@@ -448,15 +448,15 @@ a {
 
   width: 15%;
 
-  @media screen and (max-width: 1025px) {
-    display: none;
-  }
+  // @media screen and (max-width: 1025px) {
+  //   display: none;
+  // }
 }
 
 .top-bar {
-  @media screen and (min-width: 1025px) {
-    display: inline-flex;
-  }
+  display: inline-flex;
+  // @media screen and (min-width: 1025px) {
+  // }
 }
 
 .project {
