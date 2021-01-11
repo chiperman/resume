@@ -50,9 +50,9 @@ a {
     display: none;
   }
 
-  // @media print {
-  //   display: none;
-  // }
+  @media print {
+    display: none;
+  }
 }
 
 .download-pdf {
@@ -68,9 +68,9 @@ a {
     display: none;
   }
 
-  // @media print {
-  //   display: none;
-  // }
+  @media print {
+    display: none;
+  }
 }
 
 .content {
@@ -101,7 +101,7 @@ a {
 
   @media print {
     color: #000;
-    background-color: #fff;
+    background-color: #00b38a;
   }
 
   .title {
