@@ -1,0 +1,451 @@
+@import '../node_modules/compass-mixins/lib/compass/reset';
+@import '../node_modules/compass-mixins/lib/compass/css3';
+
+$color-gray: #d1d1d1;
+$color-green: #00b38a;
+$color-white: #ffffff;
+$color-dark: #000000;
+$color-background: #eeeeee;
+$color-hint: #bbbbbb;
+$color-divider: #ededed;
+
+$font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
+
+* {
+  @include box-sizing(border-box);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body {
+  color: $color-dark;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  background-color: $color-background;
+  overflow: auto;
+  padding-top: 5px;
+
+  @media screen and (max-width: 1024px) {
+    padding-top: 0;
+  }
+
+  @media print {
+    padding-top: 0px;
+    background-color: $color-white;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $color-green;
+}
+
+.last-modified {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 1000px;
+  color: $color-hint;
+  margin-left: -500px;
+  font-size: 12px;
+  text-align: right;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.download-pdf {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  color: $color-hint;
+  margin-left: -500px;
+  font-size: 12px;
+  text-align: right;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.content {
+  position: relative;
+  width: 1024px;
+  margin: 50px auto;
+  @include border-radius(5px);
+  background-color: $color-white;
+  overflow: hidden;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    margin: 0;
+    @include border-radius(0);
+  }
+
+  @media print {
+    margin: 0px auto;
+  }
+}
+
+.content-hd {
+  width: 100%;
+  padding: 30px 44px;
+  color: $color-white;
+  background-color: $color-green;
+  overflow: hidden;
+
+  @media screen and (max-width: 720px) {
+    padding: 25px 30px;
+  }
+
+  @media print {
+    color: #000;
+    background-color: $color-white;
+    padding: 0px 50px 5px 44px;
+  }
+  .content-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1025px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .content-column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    @media screen and (max-width: 1025px) {
+      display: flex;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .title {
+    font-size: 52px;
+    font-weight: 300;
+    overflow: hidden;
+    margin-bottom: 5px;
+
+    @media screen and (max-width: 1024px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .title,
+  .name,
+  .job,
+  .info {
+    @media screen and (max-width: 720px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .name {
+    width: fit-content;
+
+    h1 {
+      font-family: $font-family;
+      font-weight: 500;
+      letter-spacing: 5px;
+
+      @media screen and (max-width: 720px) {
+        letter-spacing: 0;
+        line-height: 1.25;
+        letter-spacing: 5px;
+      }
+    }
+
+    .name-divider {
+      background-color: darken($color-green, 2%);
+      height: 1px;
+      margin: 5px 0;
+
+      @media print {
+        background-color: darken($color-divider, 2%);
+      }
+    }
+  }
+
+  .job {
+    float: right;
+    text-align: right;
+
+    @media screen and (max-width: 720px) {
+      text-align: center;
+    }
+
+    h2 {
+      display: inline-block;
+      font-size: 24px;
+
+      @media screen and (max-width: 720px) {
+        border-top: 1px solid darken($color-green, 2%);
+        margin: 5px auto 0;
+        padding: 10px;
+      }
+    }
+  }
+
+  .content-photo {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+
+    .portrait {
+      width: 170px;
+    }
+
+    @media screen and (max-width: 1025px) {
+      display: none;
+    }
+
+    @media print {
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .info {
+    float: left;
+    line-height: 1.6;
+    font-size: 16px;
+
+    ul {
+      @media screen and (max-width: 720px) {
+        text-align: center;
+      }
+
+      & > li {
+        height: 22px;
+
+        & > a {
+          color: $color-white;
+
+          @media print {
+            color: $color-dark;
+          }
+
+          font-family: $font-family;
+          font-size: 16px;
+
+          &:hover {
+            color: #e8e8e8;
+          }
+
+          .iconfont {
+            fill: $color-white;
+            vertical-align: middle;
+
+            @media screen and (max-width: 720px) {
+              margin: 5px 8px;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.content-bd {
+  width: 100%;
+  min-height: 200px;
+  padding: 30px 45px;
+  overflow: hidden;
+
+  @media screen and (max-width: 720px) {
+    padding: 20px 20px 50px;
+  }
+
+  .content-left,
+  .content-right {
+    width: 50%;
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+    }
+  }
+
+  .section-bd {
+    overflow: hidden;
+
+    ul {
+      li {
+        margin-top: 4px;
+        list-style: disc inside;
+      }
+    }
+  }
+
+  .section-hd {
+    position: relative;
+    height: 32px;
+    margin: 15px auto;
+    overflow: hidden;
+  }
+
+  .section-title-l,
+  .section-title-r {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 35%;
+    height: 0;
+    vertical-align: middle;
+    border-top: 3px solid $color-divider;
+  }
+
+  .section-title-l {
+    left: 0;
+  }
+
+  .section-title-r {
+    right: 0;
+  }
+
+  .section-title {
+    position: relative;
+    z-index: 1;
+    width: 24%;
+    min-width: 100px;
+    margin: 0 auto;
+    padding: 4px 10px;
+    @include border-radius(32px);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: $color-background;
+  }
+
+  .item-hd {
+    position: relative;
+    padding: 10px 0 5px;
+    line-height: 20px;
+    overflow: hidden;
+    font-weight: 500;
+    min-height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .item-name {
+      display: inline-block;
+      width: 25%;
+      font-size: 16px;
+      font-weight: 600;
+
+      @media print {
+        a {
+          text-decoration: none;
+          color: $color-dark;
+          cursor: not-allowed;
+        }
+      }
+
+      @media screen and (max-width: 720px) {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+
+      .item-time {
+        float: right;
+      }
+    }
+
+    .item-more {
+      position: absolute;
+      top: 10px;
+      right: 0;
+    }
+  }
+
+  .item-bd {
+    margin: 5px auto;
+  }
+}
+
+.github-footer {
+  text-align: center;
+
+  .footer-link {
+    display: inline-block;
+    color: $color-gray;
+    margin-bottom: 25px;
+
+    @media screen and (max-width: 1024px) {
+      margin-top: 25px;
+    }
+    @media screen and (max-width: 720px) {
+      display: none;
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.company {
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__name {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    &__time {
+      float: right;
+    }
+  }
+}
+
+/** 代码标签 */
+code {
+  background-color: #635151;
+  border-radius: 3px;
+  color: $color-white;
+  font-family: $font-family;
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+}
+
+.divider {
+  background-color: $color-divider;
+  margin: 5px 0;
+  height: 1px;
+}
